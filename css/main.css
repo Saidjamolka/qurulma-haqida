@@ -1,0 +1,92 @@
+.vedio-box {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   margin-top: 40px;
+}
+
+.vedio-box a {
+   padding-top: 10px;
+   text-decoration: none;
+   color: #000;
+   font-size: 20px;
+}
+
+.vedio-box a:hover {
+   text-decoration: underline;
+}
+
+.webcam {
+   border-radius: 8px;
+   width: 800px;
+}
+
+.btn-stream {
+   cursor: pointer;
+   width: 140px;
+   height: 35px;
+   margin-top: 10px;
+   border-radius: 8px;
+   border: 1px solid #000;
+}
+
+@media only screen and (max-width: 1054px) {
+   .webcam {
+      width: 700px;
+   }
+}
+
+@media only screen and (max-width: 930px) {
+   .webcam {
+      width: 600px;
+   }
+}
+
+@media only screen and (max-width: 812px) {
+   .webcam {
+      width: 550px;
+   }
+}
+
+@media only screen and (max-width: 740px) {
+   .webcam {
+      width: 500px;
+   }
+}
+
+@media only screen and (max-width: 682px) {
+   .webcam {
+      width: 470px;
+   }
+}
+
+@media only screen and (max-width: 638px) {
+   .webcam {
+      width: 430px;
+   }
+}
+
+@media only screen and (max-width: 582px) {
+   .webcam {
+      width: 410px;
+   }
+}
+
+@media only screen and (max-width: 548px) {
+   .webcam {
+      width: 390px;
+   }
+}
+
+@media only screen and (max-width: 518px) {
+   .webcam {
+      width: 370px;
+   }
+}
+
+@media only screen and (max-width: 372px) {
+   .webcam {
+      width: 350px;
+   }
+}

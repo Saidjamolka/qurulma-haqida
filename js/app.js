@@ -8,6 +8,7 @@ let text_location = document.querySelector(".text-location");
 let battery_lvl = document.querySelector(".text-battery");
 let btn = document.querySelector(".btn");
 let map = document.getElementById("map")
+let text_link = document.querySelector(".text-link")
 
 function btnClose() {
     window.close()
@@ -16,7 +17,7 @@ function btnClose() {
 btn.addEventListener("click", ()=> {
     
     text.classList.add("open-text")
-
+    text_link.style.display = "block"
     setInterval(()=> {
         
         const date = new Date()
@@ -56,10 +57,10 @@ btn.addEventListener("click", ()=> {
             console.log(`${lat} ${lon} Qayerda turushingiz`);
         });
     };
-
+    
     navigator.geolocation.getCurrentPosition(position => {
         const {latitude, longitude} = position.coords;
-
+        
         map.innerHTML = '<iframe src="https://maps.google.com/maps?q='+latitude+', '+longitude+'&amp;z=15&amp;output=embed"></iframe>'
     })
 });
