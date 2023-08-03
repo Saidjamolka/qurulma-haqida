@@ -1,8 +1,7 @@
 
 fetch('https://api.ipify.org/?format=json')
 .then(results=> results.json())
-.then(data=> JSON.stringify(text_ip.innerHTML = `IP Manzilingiz ${data.ip}`))
-
+.then(data=> JSON.stringify(text_ip.innerHTML = `IP Manzilingiz: ${data.ip}`))
 
 let text = document.querySelector("h1")
 let text_hour = document.querySelector(".text");
@@ -12,6 +11,7 @@ let text_ram = document.querySelector(".text-ram");
 let text_proccecor = document.querySelector(".text-proccecor");
 let text_location = document.querySelector(".text-location");
 let text_ip = document.querySelector(".text-ip");
+let text_useragent = document.querySelector(".text-useragent");
 let battery_lvl = document.querySelector(".text-battery");
 let btn = document.querySelector(".btn");
 let map = document.getElementById("map");
@@ -24,8 +24,14 @@ function btnClose() {
 btn.addEventListener("click", ()=> {
     
     text.classList.add("open-text")
+    text_useragent.style.display = "block"
     text_link.style.display = "block"
     text_ip.style.display = "block"
+    
+    const ua = detect.parse(navigator.userAgent)
+    
+    text_useragent.innerHTML = `Browseringiz: ${ua.browser.family}`
+    
     
     setInterval(()=> {
         
@@ -39,7 +45,6 @@ btn.addEventListener("click", ()=> {
     }, 1000);
     
     let prosesorPatok = navigator.hardwareConcurrency;
-    
     text_platform.innerHTML = `Operatsion tizimingiz: ${window.navigator.userAgentData.platform}`
     text_screen.innerHTML = "Ekraningiz Hajimi: " + window.screen.width + " x " + window.screen.height
     text_ram.innerHTML = `Xotirangiz: ${window.navigator.deviceMemory} GB`
@@ -47,7 +52,7 @@ btn.addEventListener("click", ()=> {
     if (window.navigator.deviceMemory >= 64) {
         text_ram.innerHTML = "Xotirangiz 8 GB dan ko'p"
     }
-
+    
     text_proccecor.innerHTML = `Mantiqiy prosesorlaringiz: ${prosesorPatok}`
     
     console.log(`Operatsion Tizimingiz  ${window.navigator.userAgentData.platform}`);
